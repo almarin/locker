@@ -1,25 +1,14 @@
 <?php
-/**
- * Copyright 2010-2013 Horde LLC (http://www.horde.org/)
- *
- * See the enclosed file COPYING for license information (GPL). If you
- * did not receive this file, see http://www.horde.org/licenses/gpl.
- *
- * @author   Your Name <you@example.com>
- * @category Horde
- * @license  http://www.horde.org/licenses/gpl GPL
- * @package  Skeleton
- */
 
 /**
  * This class provides the application configuration for the test script.
  *
- * @author   Your Name <you@example.com>
+ * @author   Alfonso Marin <almarin@um.es>
  * @category Horde
  * @license  http://www.horde.org/licenses/gpl GPL
- * @package  Skeleton
+ * @package  Locker
  */
-class Skeleton_Test extends Horde_Test
+class Locker_Test extends Horde_Test
 {
     /**
      * The module list

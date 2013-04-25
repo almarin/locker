@@ -1,0 +1,18 @@
+- groups
+	- owner: ID de usuario o "external"
+	- group_metadata: según 'type'
+		- mail: json con campos 'to', 'subject' y 'msg'
+		- twitter/facebook: 'msg'
+		- external:
+			- ticket hasta que no lo haya enviado
+			- json con campos 'from', 'to', 'subject', 'msg' y 'ticket'
+	- group_status:
+		- active: grupo válido mientras no haya expirado
+		- deleted: grupo borrado explícitamente por el usuario
+		- hidden: grupo borrado por el usuario cuando ya estaba expirado
+- files
+	- status:
+		- uploaded: subido mientras no se cree el grupo. Podrán estár así 24 horas (controlable por file_creation_date)
+		- online: tiene grupo asociado y es válido mientras su grupo no expire o no se borre
+		- deleted: borrado por el usuario
+		- hidden: fichero borrado por el usuario cuando ya estaba expirado

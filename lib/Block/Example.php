@@ -1,11 +1,11 @@
 <?php
 /**
- * @author   Your Name <you@example.com>
+ * @author   Alfonso Marin <almarin@um.es>
  * @category Horde
  * @license  http://www.horde.org/licenses/gpl GPL
- * @package  Skeleton
+ * @package  Locker
  */
-class Skeleton_Block_Example extends Horde_Core_Block
+class Locker_Block_Example extends Horde_Core_Block
 {
     /**
      */

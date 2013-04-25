@@ -1,26 +1,14 @@
 <?php
 /**
- * Copyright 2007-2013 Horde LLC (http://www.horde.org/)
+ * Locker_Driver defines an API for implementing storage backends for
+ * Locker.
  *
- * See the enclosed file COPYING for license information (GPL). If you
- * did not receive this file, see http://www.horde.org/licenses/gpl.
- *
- * @author   Your Name <you@example.com>
+ * @author   Alfonso Marin <almarin@um.es>
  * @category Horde
  * @license  http://www.horde.org/licenses/gpl GPL
- * @package  Skeleton
+ * @package  Locker
  */
-
-/**
- * Skeleton_Driver defines an API for implementing storage backends for
- * Skeleton.
- *
- * @author   Your Name <you@example.com>
- * @category Horde
- * @license  http://www.horde.org/licenses/gpl GPL
- * @package  Skeleton
- */
-class Skeleton_Driver
+class Locker_Driver
 {
     /**
      * Hash containing connection parameters.

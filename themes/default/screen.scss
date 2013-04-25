@@ -1,0 +1,423 @@
+.icon-mail {
+    background-image: url("graphics/mail.png");
+}
+.icon-delete {
+    background-image: url("graphics/delete.png");
+}
+.icon-options {
+    background-image: url("graphics/options.png");
+}
+.icon {
+	width: 20px;
+	height: 20px;
+}
+$uploadzIndex: 100;
+$hordeGray: #C0CACC;
+$redExtraColor: #BD3647;
+$greenExtraColor: #3C8A00;
+$yellowExtraColor: #928620;
+$disabledExtraColor: darken($hordeGray, 20%);
+@mixin opacity($value) {
+  opacity: #{"." + $value};
+  filter: alpha(opacity=$value);
+  -ms-filter: "alpha(opacity= $value )";
+  -khtml-opacity: #{"." + $value};
+  -moz-opacity: #{"." + $value};
+}
+
+
+.upload-shadowbox{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: black;
+
+	@include opacity(40);
+	//z-index:$uploadzIndex;
+}
+
+.upload-window {
+	position: absolute;
+	border: 1px solid black;
+	background: white;
+	left: 10%;
+	top: 10%;
+	//z-index:($uploadzIndex+1);
+	width: 80%;
+	min-width: 600px;
+	height: 80%;
+	min-height: 540px;
+	max-height: 600px;
+	.dropzone {
+		border: 4px dashed #ddd;
+		height: 70%;
+		padding-top:10%;
+		text-align: center;
+		font-size: 1.5em;
+		margin:20px;
+		font-weight: bold;
+		&.withfiles {
+			height: 80px;
+			padding-top:10px;
+		}
+	}
+	.uploading-zone{
+		width: 98%;
+		margin-left:1%;
+		height: 100px;
+		overflow: auto;
+		padding-top:1px;
+		background: #efefef;
+		-webkit-box-shadow: inset 0px 0px 5px 0px rgba(1, 1, 1, 0.5);
+	    box-shadow: inset 0px 0px 5px 0px rgba(1, 1, 1, 0.5);
+	    .uploading-zone-content{
+	    	margin:10px;
+	    }
+	}
+	.options{
+	 	margin: 2.5%;
+		margin-top: 20px;
+		width: 95%;
+		.duration{
+			text-align:center;
+		}
+	}
+	.mail {
+	  height: 40%;
+	  min-height: 200px;
+	  width: 94%;
+	  margin-left: 3%;
+	  //border: 1px solid black;
+	  padding:5px;
+	  position: relative;
+	  table {
+	  	width: 100%;
+	  	border-spacing: 0px;
+	  	border: 0px;
+	  	table-layout: fixed;
+	  }
+      td.label {
+        width: 100px;
+        padding: 0px;
+  		text-align:right;
+  	  }
+  	  .field {
+  	  	padding: 0px;
+  		width: 100%;
+  	  }
+  	  textarea.field{
+  	    margin-top: 5px;
+  	    min-height: 100px;
+  	    height: 60%;
+  	  }
+  	  .buttons{
+  	  	position:absolute;
+  	  	height: 25px;
+  	  	bottom: 0px;
+  	  	width: 100%;
+  	  	text-align:center;
+  	  }
+	}
+}
+td{
+   &.file-name{width:70%}
+   &.file-size{width:15%}
+   &.file-progress{width:15%}
+}
+.upload-progress{
+	height:14px;
+	background: #eee;
+	width: 100%;
+	-webkit-box-shadow: inset 0px 0px 5px 0px rgba(1, 1, 1, 0.5);
+    box-shadow: inset 0px 0px 5px 0px rgba(1, 1, 1, 0.5);
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	overflow: hidden;
+	&.main{
+		height: 20px;
+	}
+    .bar {
+     	height:14px;
+     	background: green;
+    }
+}
+
+.locker-list{
+	.more-link{
+		margin-top: 10px;
+	}
+	padding: 10px;
+	min-width: 700px;
+	background-color: #efefef;
+	.group-wrapper, .file-wrapper{
+	  .icon-options, .icon-delete{
+	  	float: left;
+	  	display: none;
+	  	margin-left: 0px;
+	  	margin-top: 4px;
+	  	cursor: pointer;
+	  	opacity: 0.5;
+	  	&:hover{
+	  		opacity: 1;
+	  	}
+	  }
+	  &:hover .icon-options, &:hover .icon-delete{
+	    display: block;
+	  }
+	}
+	.file{
+		margin-left:30px;
+		background-color: transparent;
+		margin-bottom:5px;
+		padding:5px 10px;
+	}
+	.file-wrapper{
+		border-bottom:1px solid $hordeGray;
+		
+	}
+	.group{
+
+	  margin:5px;
+	  margin-left: 20px;
+	  background: $hordeGray;
+	  border-radius: 3px 3px 3px 3px;
+	  box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+	  &:hover {
+	    background-color: lighten($hordeGray, 5%);
+	  }
+	  &:hover.disabled{
+	    background-color: $hordeGray;
+	  }  
+	  .group-info{
+	  	&:hover {
+	  		cursor: pointer;
+	  	}
+	  	height:20px;
+	  	padding:5px;
+		  .name, input[type=checkbox] {
+		    float: left;
+		  }
+		  .name, .to {
+		    padding-top: 2px;
+		    height:18px;
+		    padding-left: 25px;
+		    font-weight: bold;
+		    text-shadow: 1px 1px 1px #fff;
+		    background: url(graphics/mail.png) left center no-repeat;
+		  }
+		  .to{
+		  	float: right;
+		  	background: url(graphics/to.png) left center no-repeat;
+		  }
+
+	  }
+	  .content{
+	  	background: white;
+		box-shadow: inset 0px 4px 4px 0px rgba(0,0,0,0.2);
+		display: none;
+
+		.meta{
+			margin: 10px 0px 5px 0px;
+			padding: 3px 10px;
+			border-bottom: 1px solid $hordeGray;
+			&.to{
+				padding-top:10px;
+			}
+			&.files {
+				ul{
+					list-style: none;
+					.deleted{
+						text-decoration:line-through;
+					}
+				}
+				.file-name{
+					float: left;
+					clear: left;
+				}
+				.file-name a{
+					display: block;
+				}
+				.file-size{
+					float: right;
+				}
+				li{
+					display: block;
+				}
+			}
+		  .to-label{
+		  	color: #666;
+		  	margin-right:10px;
+		  }			
+		}
+	  }
+	    &.open {
+	    	opacity: 1;
+	    	.content{
+	    		display: block;
+	    	}
+	    }
+		&.red{
+			.extra{
+				background: $redExtraColor;
+			}
+			.content{
+				border: 1px solid $hordeGray;
+				border-top: 0;
+			}	
+		}
+		&.green{
+			.extra{
+				background: $greenExtraColor;
+			}
+			.content{
+				border: 1px solid $hordeGray;
+				border-top: 0;
+			}
+			
+		}
+		&.yellow{
+			.extra{
+				background: $yellowExtraColor;
+			}
+			.content{
+				border: 1px solid $hordeGray;
+				border-top: 0;
+			}
+		}
+		&.disabled{
+			opacity: 0.6;
+			.extra{
+				background: $disabledExtraColor;
+			}
+			.content{
+				border: 1px solid $hordeGray;
+				border-top: 0;
+			}
+		}
+		&.disabled.open{
+			opacity: 1;
+		}
+		&:hover.disabled{
+			opacity: 1;
+		}		  
+  	  .extra{
+  	  	&:hover{
+  	  		cursor: pointer;
+  	  	}
+	  	height:16px;
+
+	  	box-shadow: inset 0px 4px 4px 0px rgba(0,0,0,0.2);
+	  	border-radius: 0px 0px 3px 3px;
+	  	
+	  	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+	  	color: #fff;
+	  	padding: 4px 10px 0 10px;
+		  	.files{
+	  		float: left;
+	  	}
+	  	.time-left{
+	  		float: right;
+	  		a {
+	  			color: white;
+	  			font-weight: bold;
+	  			text-decoration: underline;
+	  		}
+	  	}
+	  	
+	  }	
+	  &.red:hover .extra{
+	  	background: lighten($redExtraColor, 5%);
+	  }
+	  &.green:hover .extra{
+	  	background: lighten($greenExtraColor, 5%);
+	  }
+	  &.yellow:hover .extra{
+	  	background: lighten($yellowExtraColor, 5%);
+	  }
+	  .clear {
+		clear: both;
+  	  }
+	}
+
+}
+
+
+/*
+ * Stylesheet for Ambiance - Notification Plugin for jQuery
+ * Version 1.0.1
+ *
+ * Copyright (c) 2012 Richard Hsu
+ * Documentation: http://www.github.com/richardhsu/jquery.ambiance
+ * Dual licensed under the MIT and GPL licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ */
+
+/* Notification area will be top right but feel free to modify it below. */
+#ambiance-notification {
+  display: block;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+}
+
+/* Built in custom styling for the notifications. */
+.ambiance-title {
+  font-weight: bold;
+}
+
+.ambiance {
+  float: right;
+  clear: both;
+  border: 3px solid transparent;
+}
+
+.ambiance:hover {
+  border: 3px solid #DDDDDD;
+}
+
+.ambiance-default, .ambiance-success, .ambiance-error {
+  border-radius: 5px;
+  -moz-border-radius: 5px; /* Firefox 3.6 and earlier. */
+  padding: 10px;
+  margin: 10px;
+}
+
+.ambiance-default {
+  background: #000000;
+  color: #DDDDDD;
+}
+
+.ambiance-success {
+  background: #468847;
+  color: #DFF0D8;
+}
+
+.ambiance-error {
+  background: #B94A48;
+  color: #F2DEDE;
+}
+
+/* Close button attributes -- based off Twitter Bootstrap alert close item. */
+.ambiance-close {
+  display: block;
+  position: relative;
+  top: -2px;
+  right: 0px;
+  color: #FFFFFF;
+  float: right;
+  font-size: 18px;
+  font-weight: bold;
+  filter: alpha(opacity=20);
+  text-decoration: none;
+  position: relative;
+  line-height: 14px;
+  margin-left: 5px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.ambiance-close:hover {
+  color: #BBBBBB;
+  cursor: pointer;
+}

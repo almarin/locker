@@ -1,25 +1,13 @@
 <?php
 /**
- * Copyright 2010-2013 Horde LLC (http://www.horde.org/)
+ * Locker_Driver factory.
  *
- * See the enclosed file COPYING for license information (GPL). If you
- * did not receive this file, see http://www.horde.org/licenses/gpl.
- *
- * @author   Your Name <you@example.com>
+ * @author   Alfonso Marin <almarin@um.es>
  * @category Horde
  * @license  http://www.horde.org/licenses/gpl GPL
- * @package  Skeleton
+ * @package  Locker
  */
-
-/**
- * Skeleton_Driver factory.
- *
- * @author   Your Name <you@example.com>
- * @category Horde
- * @license  http://www.horde.org/licenses/gpl GPL
- * @package  Skeleton
- */
-class Skeleton_Factory_Driver extends Horde_Core_Factory_Injector
+class Locker_Factory_Driver extends Horde_Core_Factory_Injector
 {
     /**
      * @var array
@@ -27,9 +15,9 @@ class Skeleton_Factory_Driver extends Horde_Core_Factory_Injector
     private $_instances = array();
 
     /**
-     * Return an Skeleton_Driver instance.
+     * Return an Locker_Driver instance.
      *
-     * @return Skeleton_Driver
+     * @return Locker_Driver
      */
     public function create(Horde_Injector $injector)
     {
@@ -40,25 +28,25 @@ class Skeleton_Factory_Driver extends Horde_Core_Factory_Injector
             case 'Sql':
                 try {
                     if ($GLOBALS['conf']['storage']['params']['driverconfig'] == 'horde') {
-                        $db = $injector->getInstance('Horde_Db_Adapter');
+                        $db = $GLOBALS['injector']->getInstance('Horde_Db_Adapter');
                     } else {
-                        $db = $injector->getInstance('Horde_Core_Factory_Db')
-                            ->create('skeleton', 'storage');
+                        $db = $GLOBALS['injector']->getInstance('Horde_Core_Factory_Db')
+                            ->create('locker', 'storage');
                     }
                 } catch (Horde_Exception $e) {
-                    throw new Skeleton_Exception($e);
+                    throw new Locker_Exception($e);
                 }
                 $params = array('db' => $db);
                 break;
             case 'Ldap':
                 try {
-                    $params = array('ldap' => $injector->getIntance('Horde_Core_Factory_Ldap')->create('skeleton', 'storage'));
+                    $params = array('ldap' => $injector->getIntance('Horde_Core_Factory_Ldap')->create('locker', 'storage'));
                 } catch (Horde_Exception $e) {
-                    throw new Skeleton_Exception($e);
+                    throw new Locker_Exception($e);
                 }
                 break;
             }
-            $class = 'Skeleton_Driver_' . $driver;
+            $class = 'Locker_Driver_' . $driver;
             $this->_instances[$signature] = new $class($params);
         }
 

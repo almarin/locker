@@ -1,14 +1,317 @@
-/* Sidebar menu */
-.skeleton-list {
-    background-image: url("graphics/user.png");
-}
+.icon-mail {
+  background-image: url("graphics/mail.png"); }
 
-/* Button bar */
-.skeleton-delete {
-    background-image: url("graphics/delete.png");
-}
+.icon-delete {
+  background-image: url("graphics/delete.png"); }
 
-/* List table */
-.horde-table {
-    width: 100%;
-}
+.icon-options {
+  background-image: url("graphics/options.png"); }
+
+.icon {
+  width: 20px;
+  height: 20px; }
+
+.upload-shadowbox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: .40;
+  filter: alpha(opacity=40);
+  -ms-filter: "alpha(opacity= $value )";
+  -khtml-opacity: .40;
+  -moz-opacity: .40; }
+
+.upload-window {
+  position: absolute;
+  border: 1px solid black;
+  background: white;
+  left: 10%;
+  top: 10%;
+  width: 80%;
+  min-width: 600px;
+  height: 80%;
+  min-height: 540px;
+  max-height: 600px; }
+  .upload-window .dropzone {
+    border: 4px dashed #ddd;
+    height: 70%;
+    padding-top: 10%;
+    text-align: center;
+    font-size: 1.5em;
+    margin: 20px;
+    font-weight: bold; }
+    .upload-window .dropzone.withfiles {
+      height: 80px;
+      padding-top: 10px; }
+  .upload-window .uploading-zone {
+    width: 98%;
+    margin-left: 1%;
+    height: 100px;
+    overflow: auto;
+    padding-top: 1px;
+    background: #efefef;
+    -webkit-box-shadow: inset 0px 0px 5px 0px rgba(1, 1, 1, 0.5);
+    box-shadow: inset 0px 0px 5px 0px rgba(1, 1, 1, 0.5); }
+    .upload-window .uploading-zone .uploading-zone-content {
+      margin: 10px; }
+  .upload-window .options {
+    margin: 2.5%;
+    margin-top: 20px;
+    width: 95%; }
+    .upload-window .options .duration {
+      text-align: center; }
+  .upload-window .mail {
+    height: 40%;
+    min-height: 200px;
+    width: 94%;
+    margin-left: 3%;
+    padding: 5px;
+    position: relative; }
+    .upload-window .mail table {
+      width: 100%;
+      border-spacing: 0px;
+      border: 0px;
+      table-layout: fixed; }
+    .upload-window .mail td.label {
+      width: 100px;
+      padding: 0px;
+      text-align: right; }
+    .upload-window .mail .field {
+      padding: 0px;
+      width: 100%; }
+    .upload-window .mail textarea.field {
+      margin-top: 5px;
+      min-height: 100px;
+      height: 60%; }
+    .upload-window .mail .buttons {
+      position: absolute;
+      height: 25px;
+      bottom: 0px;
+      width: 100%;
+      text-align: center; }
+
+td.file-name {
+  width: 70%; }
+td.file-size {
+  width: 15%; }
+td.file-progress {
+  width: 15%; }
+
+.upload-progress {
+  height: 14px;
+  background: #eee;
+  width: 100%;
+  -webkit-box-shadow: inset 0px 0px 5px 0px rgba(1, 1, 1, 0.5);
+  box-shadow: inset 0px 0px 5px 0px rgba(1, 1, 1, 0.5);
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  overflow: hidden; }
+  .upload-progress.main {
+    height: 20px; }
+  .upload-progress .bar {
+    height: 14px;
+    background: green; }
+
+.locker-list {
+  padding: 10px;
+  min-width: 700px;
+  background-color: #efefef; }
+  .locker-list .more-link {
+    margin-top: 10px; }
+  .locker-list .group-wrapper .icon-options, .locker-list .group-wrapper .icon-delete, .locker-list .file-wrapper .icon-options, .locker-list .file-wrapper .icon-delete {
+    float: left;
+    display: none;
+    margin-left: 0px;
+    margin-top: 4px;
+    cursor: pointer;
+    opacity: 0.5; }
+    .locker-list .group-wrapper .icon-options:hover, .locker-list .group-wrapper .icon-delete:hover, .locker-list .file-wrapper .icon-options:hover, .locker-list .file-wrapper .icon-delete:hover {
+      opacity: 1; }
+  .locker-list .group-wrapper:hover .icon-options, .locker-list .group-wrapper:hover .icon-delete, .locker-list .file-wrapper:hover .icon-options, .locker-list .file-wrapper:hover .icon-delete {
+    display: block; }
+  .locker-list .file {
+    margin-left: 30px;
+    background-color: transparent;
+    margin-bottom: 5px;
+    padding: 5px 10px; }
+  .locker-list .file-wrapper {
+    border-bottom: 1px solid #c0cacc; }
+  .locker-list .group {
+    margin: 5px;
+    margin-left: 20px;
+    background: #c0cacc;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+    .locker-list .group:hover {
+      background-color: #ced6d7; }
+    .locker-list .group:hover.disabled {
+      background-color: #c0cacc; }
+    .locker-list .group .group-info {
+      height: 20px;
+      padding: 5px; }
+      .locker-list .group .group-info:hover {
+        cursor: pointer; }
+      .locker-list .group .group-info .name, .locker-list .group .group-info input[type=checkbox] {
+        float: left; }
+      .locker-list .group .group-info .name, .locker-list .group .group-info .to {
+        padding-top: 2px;
+        height: 18px;
+        padding-left: 25px;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px #fff;
+        background: url(graphics/mail.png) left center no-repeat; }
+      .locker-list .group .group-info .to {
+        float: right;
+        background: url(graphics/to.png) left center no-repeat; }
+    .locker-list .group .content {
+      background: white;
+      box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+      display: none; }
+      .locker-list .group .content .meta {
+        margin: 10px 0px 5px 0px;
+        padding: 3px 10px;
+        border-bottom: 1px solid #c0cacc; }
+        .locker-list .group .content .meta.to {
+          padding-top: 10px; }
+        .locker-list .group .content .meta.files ul {
+          list-style: none; }
+          .locker-list .group .content .meta.files ul .deleted {
+            text-decoration: line-through; }
+        .locker-list .group .content .meta.files .file-name {
+          float: left;
+          clear: left; }
+        .locker-list .group .content .meta.files .file-name a {
+          display: block; }
+        .locker-list .group .content .meta.files .file-size {
+          float: right; }
+        .locker-list .group .content .meta.files li {
+          display: block; }
+        .locker-list .group .content .meta .to-label {
+          color: #666;
+          margin-right: 10px; }
+    .locker-list .group.open {
+      opacity: 1; }
+      .locker-list .group.open .content {
+        display: block; }
+    .locker-list .group.red .extra {
+      background: #bd3647; }
+    .locker-list .group.red .content {
+      border: 1px solid #c0cacc;
+      border-top: 0; }
+    .locker-list .group.green .extra {
+      background: #3c8a00; }
+    .locker-list .group.green .content {
+      border: 1px solid #c0cacc;
+      border-top: 0; }
+    .locker-list .group.yellow .extra {
+      background: #928620; }
+    .locker-list .group.yellow .content {
+      border: 1px solid #c0cacc;
+      border-top: 0; }
+    .locker-list .group.disabled {
+      opacity: 0.6; }
+      .locker-list .group.disabled .extra {
+        background: #889b9e; }
+      .locker-list .group.disabled .content {
+        border: 1px solid #c0cacc;
+        border-top: 0; }
+    .locker-list .group.disabled.open {
+      opacity: 1; }
+    .locker-list .group:hover.disabled {
+      opacity: 1; }
+    .locker-list .group .extra {
+      height: 16px;
+      box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+      border-radius: 0px 0px 3px 3px;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 4px 10px 0 10px; }
+      .locker-list .group .extra:hover {
+        cursor: pointer; }
+      .locker-list .group .extra .files {
+        float: left; }
+      .locker-list .group .extra .time-left {
+        float: right; }
+        .locker-list .group .extra .time-left a {
+          color: white;
+          font-weight: bold;
+          text-decoration: underline; }
+    .locker-list .group.red:hover .extra {
+      background: #c94354; }
+    .locker-list .group.green:hover .extra {
+      background: #47a400; }
+    .locker-list .group.yellow:hover .extra {
+      background: #a79925; }
+    .locker-list .group .clear {
+      clear: both; }
+
+/*
+ * Stylesheet for Ambiance - Notification Plugin for jQuery
+ * Version 1.0.1
+ *
+ * Copyright (c) 2012 Richard Hsu
+ * Documentation: http://www.github.com/richardhsu/jquery.ambiance
+ * Dual licensed under the MIT and GPL licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ */
+/* Notification area will be top right but feel free to modify it below. */
+#ambiance-notification {
+  display: block;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999; }
+
+/* Built in custom styling for the notifications. */
+.ambiance-title {
+  font-weight: bold; }
+
+.ambiance {
+  float: right;
+  clear: both;
+  border: 3px solid transparent; }
+
+.ambiance:hover {
+  border: 3px solid #DDDDDD; }
+
+.ambiance-default, .ambiance-success, .ambiance-error {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  /* Firefox 3.6 and earlier. */
+  padding: 10px;
+  margin: 10px; }
+
+.ambiance-default {
+  background: #000000;
+  color: #DDDDDD; }
+
+.ambiance-success {
+  background: #468847;
+  color: #DFF0D8; }
+
+.ambiance-error {
+  background: #B94A48;
+  color: #F2DEDE; }
+
+/* Close button attributes -- based off Twitter Bootstrap alert close item. */
+.ambiance-close {
+  display: block;
+  position: relative;
+  top: -2px;
+  right: 0px;
+  color: #FFFFFF;
+  float: right;
+  font-size: 18px;
+  font-weight: bold;
+  filter: alpha(opacity=20);
+  text-decoration: none;
+  position: relative;
+  line-height: 14px;
+  margin-left: 5px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.ambiance-close:hover {
+  color: #BBBBBB;
+  cursor: pointer; }

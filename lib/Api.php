@@ -1,27 +1,16 @@
 <?php
-/**
- * Copyright 2010-2013 Horde LLC (http://www.horde.org/)
- *
- * See the enclosed file COPYING for license information (GPL). If you
- * did not receive this file, see http://www.horde.org/licenses/gpl.
- *
- * @author   Your Name <you@example.com>
- * @category Horde
- * @license  http://www.horde.org/licenses/gpl GPL
- * @package  Skeleton
- */
 
 /**
- * Skeleton external API.
+ * Locker external API.
  *
- * This file defines Skeleton's external API interface. Other applications can
- * interact with Skeleton through this API.
+ * This file defines Locker's external API interface. Other applications can
+ * interact with Locker through this API.
  *
- * @author   Your Name <you@example.com>
+ * @author   Alfonso Marin <almarin@um.es>
  * @category Horde
  * @license  http://www.horde.org/licenses/gpl GPL
- * @package  Skeleton
+ * @package  Locker
  */
-class Skeleton_Api extends Horde_Registry_Api
+class Locker_Api extends Horde_Registry_Api
 {
 }

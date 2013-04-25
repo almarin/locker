@@ -24,15 +24,17 @@ $storage = $injector->getInstance('Locker_Factory_Driver')->create();
 
 $view = $injector->createInstance('Horde_View');
 
-$active_groups_view = 	$injector->createInstance('Horde_View');
-$active_groups_view->groups = $storage->listGroups(array('status' => 'active'));
-$view->active_groups_html = $active_groups_view->render('group-list');
+$active_files_view = 	$injector->createInstance('Horde_View');
+$active_files_view->files = $storage->listFiles(array('status' => 'active'));
 
-$inactive_groups_view =	$injector->createInstance('Horde_View');
-$inactive_groups_view->disabled = true;
-$inactive_groups_view->groups = $storage->listGroups(array('status' => 'inactive', 'page' => 0));
-$view->morepages = (count($storage->listGroups(array('status' => 'inactive', 'page' => 1)))>0);
-$view->inactive_groups_html = $inactive_groups_view->render('group-list');
+$view->active_files_html = $active_files_view->render('file-list');
+
+$inactive_files_view =	$injector->createInstance('Horde_View');
+$inactive_files_view->disabled = true;
+$inactive_files_view->files = $storage->listFiles(array('status' => 'inactive', 'page' => 0));
+$view->morepages = (count($storage->listFiles(array('status' => 'inactive', 'page' => 1)))>0);
+
+$view->inactive_files_html = $inactive_files_view->render('file-list');
 
 
 /* Here starts the actual page output. First we output the complete HTML
@@ -47,11 +49,11 @@ $notification->notify(array('listeners' => 'status'));
 
 
 
+
 /* Here goes the actual content of your application's page. This could be
  * Horde_View output, a rendered Horde_Form, or any other arbitrary HTML
  * output. */
-echo $view->render('list');
-
+echo $view->render('files');
 
 echo $view->render('js-templates');
 /* Finally the HTML content is closed and JavaScript files are loaded. */
