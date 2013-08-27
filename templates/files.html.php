@@ -12,7 +12,7 @@
 	  <div class="more">
 	  </div>  	
     <a data-action="next-page" data-type="file"><?php echo _('Load more expired files');?></a>
-    <span class="loading" style="display:none">Cargando...</span>    
+    <span class="loading" style="display:none"><?php echo _("Loading...");?></span>    
   </div>
 <?php } ?>
 </div>

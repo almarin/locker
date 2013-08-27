@@ -10,10 +10,11 @@
 	</style>
 </head>
 <body>
+	<div style="width:800px;text-align: justify">
 	<?php echo str_replace(array("\r\n", "\n\r", "\n", "\r"), "<br/>", $this->group->group_metadata->msg);?>
 	<div style="margin-top: 20px; border-bottom:1px solid #C0CACC;width:100%">
 		<span style="text-shadow: 1px 1px 1px rgba(0, 0,0,0.5); font-weight: bold;padding:0 5px; background-color: #C0CACC;color: white;border-radius: 0 5px 0 0 ">
-			Ficheros compartidos por consigna
+			<?php echo _("Shared Locker files"); ?>
 		</span>
 
 	</div>
@@ -32,7 +33,10 @@
 	<?php } ?>
 	</div>
 	<span style="color: red; text-shadow: 1px 1px 1px rgba(0, 0,0,0.5);">
-		Los enlaces caducan el <?php echo $this->group->group_expiration_date->format('d/m/Y');?> (dentro de <?php echo $this->group->getNumDaysToExpire();?> días)
+		<?php echo sprintf(_("Links expire on %s, in %s days"),$this->group->group_expiration_date->format('d/m/Y'), $this->group->getNumDaysToExpire());?>
+		
 	</span>
+	</div>
+
 </body>
 </html>

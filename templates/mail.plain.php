@@ -1,8 +1,8 @@
 <?php echo str_replace(array("\r\n", "\n\r", "\n", "\r"), "<br/>", $this->group->group_metadata->msg);?>
 
 -------------------------------------------------------------
-Ficheros compartidos por consigna
-Los enlaces caducan el <?php echo $this->group->group_expiration_date->format('d/m/Y');?> (dentro de <?php echo $this->group->getNumDaysToExpire();?> <?php echo $this->group->getNumDaysToExpire()>1?'días':'día';?>)
+<?php echo _("Shared Locker files"); ?>
+<?php echo sprintf(_("Links expire on %s, in %s days"),$this->group->group_expiration_date->format('d/m/Y'), $this->group->getNumDaysToExpire());?>
 -------------------------------------------------------------
 <?php foreach ($this->group->getFiles() as $file){ ?>
 <?php echo $file->file_name;?> (<?php echo $file->getHumanSize().")\n";?>

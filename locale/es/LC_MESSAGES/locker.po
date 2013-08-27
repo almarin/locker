@@ -1,0 +1,308 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Horde LLC (http://www.horde.org/)
+# This file is distributed under the same license as the Locker package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Locker H5 (0.2-git)\n"
+"Report-Msgid-Bugs-To: dev@lists.horde.org\n"
+"POT-Creation-Date: 2013-07-03 14:14+0200\n"
+"PO-Revision-Date: 2013-07-03 14:14+0200\n"
+"Last-Translator: Alfonso Marin <almarin@um.es>\n"
+"Language-Team: Spanish <ES@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: templates/group-list.html.php:27
+#, php-format
+msgid "%s, %s and %s additional recipient"
+msgstr "%s, %s y %s destinatario más"
+
+#: templates/group-list.html.php:29
+#, php-format
+msgid "%s, %s and %s additional recipients"
+msgstr "%s, %s y %s destinatarios más"
+
+#: lib/Locker.php:261
+msgid "(No subject)"
+msgstr "(Sin asunto)"
+
+#: lib/Group.php:57
+#, php-format
+msgid "<a title='exacly next %s'>%s days</a>"
+msgstr "<a title='Exáctamente el próximo %s'>%s días</a>"
+
+#: lib/Group.php:61
+#, php-format
+msgid "<a title='exacly next %s'>%s months</a>"
+msgstr "<a title='Exáctamente el próximo %s'>%s meses</a>"
+
+#: lib/Group.php:59
+#, php-format
+msgid "<a title='exacly next %s'>%s weeks</a>"
+msgstr "<a title='Exáctamente el próximo %s'>%s semanas</a>"
+
+#: lib/Group.php:63
+#, php-format
+msgid "<a title='exacly next %s'>%s years</a>"
+msgstr "<a title='Exáctamente el próximo %s'>%s años</a>"
+
+#: templates/files.html.php:1
+msgid "Active Files"
+msgstr "Ficheros Activos"
+
+#: templates/list.html.php:1
+msgid "Active Groups"
+msgstr "Grupos Activos"
+
+#: templates/js-templates.html.php:85
+msgid ""
+"Are you sure you want to delete this file? Note that it will no longer be "
+"available for download"
+msgstr ""
+"¿Seguro que deseas borrar este fichero? Ten en cuenta que ya no podrán "
+"descargarse"
+
+#: templates/js-templates.html.php:84
+msgid ""
+"Are you sure you want to delete this message? Associated files will no "
+"longer be available for download"
+msgstr ""
+"¿Seguro que deseas borrar este mensaje? Los ficheros asociados no podrán "
+"descargarse"
+
+#: templates/js-templates.html.php:48
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: lib/Block/Example.php:26 lib/Block/Example.php:36
+msgid "Color"
+msgstr "Color"
+
+#: templates/js-templates.html.php:6
+msgid "Drag here your files from your desktop, or use next button"
+msgstr ""
+"Arrastra tus ficheros desde el escritorio, o utiliza el siguiente botón"
+
+#: lib/Locker.php:294
+msgid "Error processing files"
+msgstr "Error al procesar los ficheros"
+
+#: external.php:50
+msgid "Error sending ticket. Contact administrator"
+msgstr "Error al enviar el ticket. Contacte con el administrador"
+
+#: lib/Block/Example.php:16
+msgid "Example Block"
+msgstr ""
+
+#: lib/Group.php:55
+#, php-format
+msgid "Expire <a title='exacly next %s'>today</a>"
+msgstr "Caduca <a title='exacly next %s'>hoy</a>"
+
+#: lib/Group.php:66
+#, php-format
+msgid "Expire in %s"
+msgstr "Caduca en %s"
+
+#: lib/Group.php:66
+#, php-format
+msgid "Expired %s ago"
+msgstr "Caducado hace %s"
+
+#: templates/files.html.php:6
+msgid "Expired Files"
+msgstr "Ficheros Expirados"
+
+#: templates/list.html.php:7
+msgid "Expired Groups"
+msgstr "Grupos Expirados"
+
+#: external.php:67
+msgid "External Composite"
+msgstr "Redacción Externa"
+
+#: templates/js-templates.html.php:33
+msgid "For:"
+msgstr "Para:"
+
+#: templates/js-templates.html.php:19
+msgid ""
+"How many days do you want to keep these files accesible so they can be "
+"downloaded?"
+msgstr ""
+"¿Cuantos días quieres que los ficheros permanezcan accesibles para descarga?"
+
+#: lib/Locker.php:255
+msgid "Invalid recipient."
+msgstr "Destinatario no válido"
+
+#: external.php:69
+msgid "Invalid ticket"
+msgstr "Ticket no válido"
+
+#: templates/mail.html.php:36 templates/mail.plain.php:5
+#, php-format
+msgid "Links expire on %s, in %s days"
+msgstr "Los enlaces expiran el próximo %s, en %s días"
+
+#: files.php:43 list.php:47
+msgid "List"
+msgstr "Lista"
+
+#: templates/files.html.php:14
+msgid "Load more expired files"
+msgstr "Cargar más ficheros caducados"
+
+#: templates/list.html.php:17
+msgid "Load more expired groups"
+msgstr "Cargar más grupos caducados"
+
+#: templates/files.html.php:15
+msgid "Loading..."
+msgstr "Cargando..."
+
+#: lib/Application.php:79
+msgid "My Files"
+msgstr "Mis Ficheros"
+
+#: templates/empty-status.html.php:8
+msgid ""
+"Please, use the <strong>Send Files</strong> button to send your first Locker "
+"message."
+msgstr ""
+"Por favor, utiliza el botón <strong>Enviar Ficheros</strong> para enviar tu "
+"primer mensaje Consigna"
+
+#: templates/group-list.html.php:39
+msgid "Recipients:"
+msgstr "Destinatarios"
+
+#: config/prefs.php:13
+msgid "Sample Pref"
+msgstr ""
+
+#: config/prefs.php:12
+msgid "Sample Prefs"
+msgstr ""
+
+#: templates/js-templates.html.php:8
+msgid "Select Files"
+msgstr "Seleccionar Ficheros"
+
+#: templates/js-templates.html.php:47 templates/ticket-request.html.php:8
+msgid "Send"
+msgstr "Enviar"
+
+#: lib/Application.php:92
+msgid "Send Files"
+msgstr "Enviar Ficheros"
+
+#: lib/Application.php:71
+msgid "Sent"
+msgstr "Enviado"
+
+#: templates/group-list.html.php:74
+#, php-format
+msgid "Sent %s at %s with <strong>%s files</strong>"
+msgstr "Enviado %s a las %s con <strong>%s ficheros</strong>"
+
+#: config/prefs.php:14
+msgid "Set your sample preference."
+msgstr ""
+
+#: templates/mail.html.php:17 templates/mail.plain.php:4
+msgid "Shared Locker files"
+msgstr "Ficheros compartidos por Consigna"
+
+#: templates/js-templates.html.php:39
+msgid "Subject:"
+msgstr "Asunto:"
+
+#: lib/Locker.php:176
+msgid "The locker message was successfully sent."
+msgstr "El mensaje Consigna se ha enviado correctamente."
+
+#: lib/Locker.php:238
+msgid "There are no specified files to share"
+msgstr "No se han especificado ficheros a compartir"
+
+#: templates/js-templates.html.php:83
+msgid "There are still files pending upload "
+msgstr "Todavía quedan ficheros pendientes de subir"
+
+#: lib/Locker.php:182
+msgid "There was an error sending the Locker message"
+msgstr "Courrió un error al enviar el mensaje Consigna"
+
+#: config/prefs.php:22
+msgid "This is your sample preference."
+msgstr ""
+
+#: external.php:74
+msgid "Ticket Request"
+msgstr "Solicitud de Ticket"
+
+#: lib/Locker.php:280
+msgid "Ticket not valid"
+msgstr "Ticket no válido"
+
+#: lib/Locker.php:214
+msgid "Ticket requested"
+msgstr "Ticket solicitado"
+
+#: external.php:55
+msgid "Ticket sent"
+msgstr "Ticket enviado"
+
+#: external.php:52
+msgid "Ticket sent. Please, check your inbox address and use the link provided"
+msgstr ""
+"Ticket enviado. Por favor, compruebe la bandeja de entrada de su correo y "
+"utilice el link proporcionado"
+
+#: templates/ticket-request.html.php:4
+msgid "To send a Locker message you need to confirm your email address."
+msgstr ""
+"Para enviar un mensaje Consigna, necesitas confirmar tu dirección de correo"
+
+#: lib/Locker.php:309
+msgid "Unknow message type"
+msgstr ""
+
+#: templates/js-templates.html.php:78
+msgid "Uploading files... You can continue adding additional files"
+msgstr "Subiendo ficheros... Puedes continuar añadiendo ficheros adicionales"
+
+#: templates/mail-ticket.plain.php:5
+msgid "You can use this ticket to send a message using the Locker service."
+msgstr ""
+"Puedes utilizar este ticket para enviar un mensaje usando el servicio "
+"Consigna"
+
+#: templates/empty-status.html.php:5
+msgid "You haven't sent any message."
+msgstr "No has enviado ningún mensaje todavía"
+
+#: lib/Locker.php:249 templates/js-templates.html.php:82
+msgid "You must set at least one valid recipient"
+msgstr "Debes indicar al menos un recipiente válido"
+
+#: templates/mail-ticket.plain.php:1
+msgid "Your Locker Ticket:"
+msgstr "Su Ticket Consigna"
+
+#: lib/Locker.php:167 lib/Locker.php:214
+msgid "[locker] "
+msgstr "[consigna]"
+
+#: templates/js-templates.html.php:24
+msgid "day"
+msgstr "día"
+
+#: templates/js-templates.html.php:24
+msgid "days"
+msgstr "días"

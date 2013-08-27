@@ -21,8 +21,13 @@
                 $parser = new Horde_Mail_Rfc822();
                 $list = $parser->parseAddressList($group->group_metadata->to);
                 
-                if (count($list->addresses)>3){
-                    echo $list->addresses[0].', '.$list->addresses[1]. ' y ' . (count($list->addresses)-2).' destinatarios más';
+                if (count($list->addresses)>2){
+                    $resto = (count($list->addresses)-2);
+                    if ($resto == 1){
+                      echo sprintf(_("%s, %s and %s additional recipient"), $list->addresses[0], $list->addresses[1], $resto);
+                    } else {
+                      echo sprintf(_("%s, %s and %s additional recipients"), $list->addresses[0], $list->addresses[1], $resto);
+                    }
                 } else {
                   echo htmlspecialchars($group->group_metadata->to);  
                 }
@@ -31,7 +36,7 @@
         </div>
         <div class="content">
           <div class="meta to">
-             <span class="to-label">Destinatarios:</span>
+             <span class="to-label"><?php echo _("Recipients:");?></span>
             <?php echo htmlspecialchars($group->group_metadata->to);?>
           </div>
           <div class="meta msg">
